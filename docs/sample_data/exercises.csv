@@ -1,0 +1,16 @@
+exercise_id,exercise_name,category,muscle_group,description
+1,Squats,Strength,Legs,Barbell back squat
+2,Push-ups,Strength,Chest,Bodyweight press
+3,Bench Press,Strength,Chest,Flat barbell press
+4,Deadlift,Strength,Back,Conventional deadlift
+5,Running,Cardio,Full Body,Steady-state run
+6,Cycling,Cardio,Legs,Stationary or road bike
+7,Pull-ups,Strength,Back,Bodyweight pull
+8,Lunges,Strength,Legs,Walking lunges
+9,Plank,Strength,Core,Isometric hold
+10,Burpees,HIIT,Full Body,Explosive full-body move
+11,Rowing,Cardio,Back,Rowing machine
+12,Yoga Flow,Flexibility,Full Body,Vinyasa sequence
+13,Shoulder Press,Strength,Shoulders,Overhead dumbbell press
+14,Jump Rope,HIIT,Legs,Skipping
+15,Swimming,Cardio,Full Body,Freestyle laps

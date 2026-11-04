@@ -1,0 +1,31 @@
+food_id,food_name,category,serving_size,calories,protein_g,carbs_g,fat_g,fiber_g
+1,Oatmeal,Grains,1 cup,150.00,5.00,27.00,3.00,4.00
+2,Boiled Egg,Protein,1 large,78.00,6.30,0.60,5.30,0.00
+3,Grilled Chicken Breast,Protein,100 g,165.00,31.00,0.00,3.60,0.00
+4,Brown Rice,Grains,1 cup,216.00,5.00,45.00,1.80,3.50
+5,Banana,Fruit,1 medium,105.00,1.30,27.00,0.40,3.10
+6,Greek Yogurt,Dairy,170 g,100.00,17.00,6.00,0.70,0.00
+7,Almonds,Nuts,28 g,164.00,6.00,6.00,14.00,3.50
+8,Salmon,Protein,100 g,208.00,20.00,0.00,13.00,0.00
+9,Broccoli,Vegetable,1 cup,55.00,3.70,11.00,0.60,5.10
+10,Whole Wheat Bread,Grains,2 slices,160.00,8.00,28.00,2.50,4.00
+11,Apple,Fruit,1 medium,95.00,0.50,25.00,0.30,4.40
+12,Paneer,Dairy,100 g,265.00,18.00,1.20,20.00,0.00
+13,Lentil Dal,Legumes,1 cup,230.00,18.00,40.00,0.80,15.60
+14,Chapati,Grains,1 piece,104.00,3.00,18.00,2.50,2.70
+15,Whey Protein Shake,Supplement,1 scoop,120.00,24.00,3.00,1.50,0.00
+16,Sweet Potato,Vegetable,1 medium,112.00,2.00,26.00,0.10,3.90
+17,Tofu,Protein,100 g,144.00,17.00,3.00,9.00,2.30
+18,Avocado,Fruit,1/2 fruit,160.00,2.00,9.00,15.00,6.70
+19,Peanut Butter,Spread,2 tbsp,188.00,8.00,6.00,16.00,1.90
+20,Milk (Skimmed),Dairy,1 cup,83.00,8.00,12.00,0.20,0.00
+21,Quinoa,Grains,1 cup,222.00,8.00,39.00,3.60,5.20
+22,Tuna (Canned),Protein,100 g,116.00,26.00,0.00,1.00,0.00
+23,Idli,Grains,2 pieces,116.00,4.00,24.00,0.40,1.20
+24,Dosa,Grains,1 piece,168.00,4.00,29.00,3.70,1.10
+25,Chickpea Curry,Legumes,1 cup,269.00,14.50,45.00,4.20,12.50
+26,Orange,Fruit,1 medium,62.00,1.20,15.40,0.20,3.10
+27,Cottage Cheese,Dairy,100 g,98.00,11.00,3.40,4.30,0.00
+28,Mixed Salad,Vegetable,1 bowl,45.00,2.00,8.00,0.50,3.00
+29,Dark Chocolate,Snack,30 g,170.00,2.00,13.00,12.00,3.00
+30,Protein Bar,Snack,1 bar,200.00,20.00,22.00,7.00,3.00

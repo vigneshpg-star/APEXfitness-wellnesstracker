@@ -1,0 +1,30 @@
+# Python virtual environment
+.venv/
+venv/
+ENV/
+env/
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Environment files
+.env
+
+# Operating system files
+desktop.ini
+Thumbs.db
+.DS_Store
+
+# Logs and scratch
+*.log
+scratch/
+temp/
+*.tmp
+
+# VS Code personal settings (except shared tasks/launch)
+.vscode/*
+!.vscode/settings.json

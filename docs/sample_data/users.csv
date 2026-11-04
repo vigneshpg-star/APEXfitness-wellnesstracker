@@ -1,0 +1,21 @@
+user_id,full_name,email,date_of_birth,gender,height_cm,registration_date
+1,Aarav Nair,aarav.nair@example.com,1998-04-12,Male,176.0,2026-01-05
+2,Meera Pillai,meera.pillai@example.com,1995-09-23,Female,162.5,2026-01-07
+3,Rohan Menon,rohan.menon@example.com,1990-01-30,Male,181.0,2026-01-09
+4,Anjali Varma,anjali.varma@example.com,2000-06-14,Female,158.0,2026-01-12
+5,Vikram Iyer,vikram.iyer@example.com,1987-11-02,Male,172.0,2026-01-15
+6,Sneha Kurian,sneha.kurian@example.com,1993-03-18,Female,165.0,2026-01-18
+7,Arjun Das,arjun.das@example.com,1999-08-08,Male,179.5,2026-01-20
+8,Divya Thomas,divya.thomas@example.com,1996-12-25,Female,160.0,2026-01-22
+9,Karthik Raj,karthik.raj@example.com,1985-05-05,Male,170.0,2026-01-25
+10,Neha Joseph,neha.joseph@example.com,2001-02-11,Female,167.0,2026-01-28
+11,Sanjay Nambiar,sanjay.nambiar@example.com,1992-07-19,Male,183.0,2026-02-01
+12,Lakshmi Krishnan,lakshmi.k@example.com,1989-10-10,Female,155.5,2026-02-03
+13,Rahul Sharma,rahul.sharma@example.com,1997-04-27,Male,174.0,2026-02-05
+14,Priya Singh,priya.singh@example.com,1994-01-16,Female,163.0,2026-02-08
+15,Aditya Verma,aditya.verma@example.com,1991-09-09,Male,177.0,2026-02-10
+16,Fatima Rahman,fatima.rahman@example.com,1998-11-21,Female,161.0,2026-02-12
+17,Manoj George,manoj.george@example.com,1983-03-03,Male,169.0,2026-02-15
+18,Isha Patel,isha.patel@example.com,2002-05-30,Female,166.0,2026-02-18
+19,Gokul Anand,gokul.anand@example.com,1996-08-14,Male,185.0,2026-02-20
+20,Tara Mathew,tara.mathew@example.com,1990-12-01,Female,159.0,2026-02-22
