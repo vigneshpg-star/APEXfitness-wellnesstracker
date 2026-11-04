@@ -71,7 +71,7 @@ main{padding:18px 14px}.hero{grid-template-columns:1fr}.big .n{font-size:48px}}
 </style></head><body><div class="app">
 <nav><h1><svg class="logo" viewBox="0 0 40 40" width="38" height="38" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FF6A13"/><stop offset="1" stop-color="#FFB020"/></linearGradient></defs><rect width="40" height="40" rx="10" fill="#151517" stroke="#2A2A2E"/><path d="M7 32 L20 8 L33 32 H26.5 L20 20 L13.5 32 Z" fill="url(#lg)"/><circle cx="20" cy="8" r="2.4" fill="#FFB020"/></svg><span class="brand">APEX<small>Fitness &amp; Wellness</small></span></h1>
 <button data-tab="dash" class="on">Dashboard</button><button data-tab="workout">Workouts</button>
-<button data-tab="nutrition">Nutrition</button><button data-tab="health">Health</button><button data-tab="goals">Goals</button><button data-tab="analytics">Analytics</button></nav>
+<button data-tab="nutrition">Nutrition</button><button data-tab="health">Health</button><button data-tab="analytics">Analytics</button></nav>
 <main>
 <div class="top"><div><h2 id="who">Dashboard</h2><p id="sub">Your latest numbers</p></div>
 <label>Member<select id="user"></select></label></div>
@@ -124,19 +124,6 @@ main{padding:18px 14px}.hero{grid-template-columns:1fr}.big .n{font-size:48px}}
 </section>
 
 
-<section id="goals">
- <div class="panel"><h3>Set a fitness goal</h3><form id="gform">
-  <label>Goal type<select name="goal_type">
-   <option>Weight Loss</option><option>Weight Gain</option><option>Muscle Building</option><option>General Fitness</option><option>Endurance</option>
-  </select></label>
-  <label>Target weight (kg)<input type="number" name="target_weight_kg" min="30" max="300" step="0.1" value="68"></label>
-  <label>Target daily calories<input type="number" name="target_calories" min="500" max="10000" step="50" value="2000"></label>
-  <label>Target daily steps<input type="number" name="target_steps" min="0" step="500" value="10000"></label>
-  <label>Target date<input type="date" name="target_date" required></label>
-  <label>Status<select name="status"><option>Active</option><option>Achieved</option><option>Abandoned</option></select></label>
-  <button class="btn" type="submit">Save goal</button></form></div>
- <div class="panel tw"><h3>Active &amp; past goals</h3><table id="gtable"></table></div>
-</section>
 
 <section id="analytics"><div class="grid2">
  <div class="panel"><h3>Weekly workouts</h3><div class="chart"><canvas id="c_week"></canvas></div></div>
@@ -245,33 +232,6 @@ async function loadHealth() {
   const c = [["When", "record_datetime"], ["Weight", "weight_kg"], ["BMI", "bmi"], ["HR", "heart_rate"], ["Resting HR", "resting_heart_rate"], ["Steps", "steps"], ["Calories", "calories_burned"], ["Sleep", "sleep_hours"]]; c.idKey = "metric_id";
   table($("#htable"), c, await api(`/health-metrics?user_id=${uid}`), "/health-metrics", true);
 }
-async function loadGoals() {
-  const goals = await api(`/goals?user_id=${uid}`);
-  const formatted = goals.map(g => {
-    let prog = "–";
-    if (g.current_weight_kg && g.target_weight_kg) {
-      const diff = +(g.target_weight_kg - g.current_weight_kg).toFixed(1);
-      if (diff === 0) prog = "Target reached!";
-      else if (diff > 0) prog = `Need +${diff} kg (Now: ${g.current_weight_kg} kg)`;
-      else prog = `Need ${diff} kg (Now: ${g.current_weight_kg} kg)`;
-    }
-    return {
-      ...g,
-      target_weight: g.target_weight_kg ? `${g.target_weight_kg} kg` : "–",
-      current_weight: g.current_weight_kg ? `${g.current_weight_kg} kg` : "–",
-      progress: prog,
-      target_calories_fmt: g.target_calories ? `${g.target_calories} kcal` : "–",
-      target_steps_fmt: g.target_steps ? g.target_steps.toLocaleString() : "–"
-    };
-  });
-  const c = [
-    ["Type", "goal_type"], ["Current", "current_weight"], ["Target", "target_weight"],
-    ["Progress", "progress"], ["Daily cals", "target_calories_fmt"], ["Daily steps", "target_steps_fmt"],
-    ["Target date", "target_date"], ["Status", "status"]
-  ];
-  c.idKey = "goal_id";
-  table($("#gtable"), c, formatted, "/goals", true);
-}
 async function loadAnalytics() {
   const [w, t, bal, mr, hrz, sp] = await Promise.all([
     api(`/analytics/weekly-progress?user_id=${uid}`),
@@ -296,8 +256,8 @@ async function loadAnalytics() {
     { label: "Daily Protein (g)", data: sp.map(x => x.avg_daily_protein_g), borderColor: C[1], tension: .3, yAxisID: 'y1' }
   ], { scales: { y: { type: 'linear', display: true, position: 'left' }, y1: { type: 'linear', display: true, position: 'right', grid: { drawOnChartArea: false } } } });
 }
-const loaders = { dash: loadDash, workout: loadWorkouts, nutrition: loadNutrition, health: loadHealth, goals: loadGoals, analytics: loadAnalytics };
-const titles = { dash: "Dashboard", workout: "Workouts", nutrition: "Nutrition", health: "Health", goals: "Fitness Goals", analytics: "Analytics" };
+const loaders = { dash: loadDash, workout: loadWorkouts, nutrition: loadNutrition, health: loadHealth, analytics: loadAnalytics };
+const titles = { dash: "Dashboard", workout: "Workouts", nutrition: "Nutrition", health: "Health", analytics: "Analytics" };
 
 async function show(t) {
   tab = t;
@@ -329,14 +289,6 @@ $("#wform [name=workout_type]").addEventListener("change", updateWorkoutCalories
 bind("#wform", "/workouts", f => ({ user_id: uid, workout_date: f.workout_date, start_time: f.start_time, end_time: f.end_time, workout_type: f.workout_type,
   exercises: [{ exercise_id: +f.exercise_id, sets: +f.sets, repetitions: +f.repetitions, weight_used_kg: +f.weight_used_kg, duration_minutes: +f.duration_minutes, calories_burned: +f.calories_burned }] }));
 bind("#nform", "/nutrition", f => ({ user_id: uid, food_id: +f.food_id, log_date: f.log_date, meal_type: f.meal_type, quantity: +f.quantity }));
-bind("#gform", "/goals", f => ({
-  user_id: uid, goal_type: f.goal_type,
-  target_weight_kg: f.target_weight_kg ? +f.target_weight_kg : null,
-  target_calories: f.target_calories ? +f.target_calories : null,
-  target_steps: f.target_steps ? +f.target_steps : null,
-  target_date: f.target_date || null,
-  status: f.status || 'Active'
-}));
 bind("#hform", "/health-metrics", f => ({ user_id: uid, record_datetime: f.record_datetime.replace("T", " ") + ":00", weight_kg: +f.weight_kg,
   heart_rate: f.heart_rate ? +f.heart_rate : null, resting_heart_rate: f.resting_heart_rate ? +f.resting_heart_rate : null,
   steps: +f.steps, calories_burned: +f.calories_burned, sleep_hours: +f.sleep_hours }));
@@ -345,13 +297,7 @@ const editDefs = {
   "/workouts": ["Edit workout", [["workout_date", "Date", "date"], ["start_time", "Start", "time"], ["end_time", "End", "time"], ["workout_type", "Type", "select", ["Strength", "Cardio", "HIIT", "Mixed"]], ["notes", "Notes", "text"]]],
   "/nutrition": ["Edit food log", [["log_date", "Date", "date"], ["meal_type", "Meal", "select", ["Breakfast", "Lunch", "Dinner", "Snack"]], ["food_id", "Food", "select_food"], ["quantity", "Servings", "number", { min: 0.25, step: 0.25 }]]],
   "/health-metrics": ["Edit health record", [["record_datetime", "When", "datetime-local"], ["weight_kg", "Weight (kg)", "number", { min: 1, step: 0.1 }], ["heart_rate", "Heart rate", "number", { min: 25, max: 250 }],
-    ["resting_heart_rate", "Resting HR", "number", { min: 25, max: 150 }], ["steps", "Steps", "number", { min: 0 }], ["calories_burned", "Calories burned", "number", { min: 0 }], ["sleep_hours", "Sleep (h)", "number", { min: 0, max: 24, step: 0.1 }]]],
-  "/goals": ["Edit goal", [["goal_type", "Goal type", "select", ["Weight Loss", "Weight Gain", "Muscle Building", "General Fitness", "Endurance"]],
-    ["target_weight_kg", "Target weight (kg)", "number", { min: 30, max: 300, step: 0.1 }],
-    ["target_calories", "Target calories", "number", { min: 500, max: 10000, step: 50 }],
-    ["target_steps", "Target steps", "number", { min: 0, step: 500 }],
-    ["target_date", "Target date", "date"],
-    ["status", "Status", "select", ["Active", "Achieved", "Abandoned"]]]]
+    ["resting_heart_rate", "Resting HR", "number", { min: 25, max: 150 }], ["steps", "Steps", "number", { min: 0 }], ["calories_burned", "Calories burned", "number", { min: 0 }], ["sleep_hours", "Sleep (h)", "number", { min: 0, max: 24, step: 0.1 }]]]
 };
 let editPath = null;
 function toInput(k, v, type) {
