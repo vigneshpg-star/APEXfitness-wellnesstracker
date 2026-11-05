@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 950" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1250 920" width="100%" height="100%">
   <defs>
     <style>
       .bg { fill: #0B0B0C; }
@@ -23,150 +23,132 @@
     </marker>
   </defs>
 
-  <rect width="1400" height="950" class="bg" />
+  <rect width="1250" height="920" class="bg" />
 
   <text x="50" y="45" class="title">APEX Fitness &amp; Wellness Tracking System - Relational ERD</text>
-  <text x="50" y="70" class="subtitle">Complete Crow's Foot Entity-Relationship Model (3NF MySQL 8.0 InnoDB)</text>
+  <text x="50" y="70" class="subtitle">Crow's Foot Entity-Relationship Model (3NF MySQL 8.0 InnoDB)</text>
 
-  <!-- TABLE: users (Center-Left Top) -->
-  <g transform="translate(480, 110)">
-    <rect width="250" height="230" class="box" />
-    <path d="M 0 0 L 250 0 L 250 35 L 0 35 Z" class="box-header" />
+  <!-- TABLE: users (Center Top) -->
+  <g transform="translate(480, 95)">
+    <rect width="280" height="230" class="box" />
+    <path d="M 0 0 L 280 0 L 280 35 L 0 35 Z" class="box-header" />
     <text x="15" y="24" class="tbl-title">users</text>
-    <text x="15" y="58" class="col-pk">PK  user_id</text><text x="180" y="58" class="col-type">INT (AI)</text>
-    <text x="15" y="82" class="col-txt">    full_name</text><text x="180" y="82" class="col-type">VARCHAR(100)</text>
-    <text x="15" y="106" class="col-pk">UK  email</text><text x="180" y="106" class="col-type">VARCHAR(120)</text>
-    <text x="15" y="130" class="col-txt">    date_of_birth</text><text x="180" y="130" class="col-type">DATE</text>
-    <text x="15" y="154" class="col-txt">    gender</text><text x="180" y="154" class="col-type">ENUM</text>
-    <text x="15" y="178" class="col-txt">    height_cm</text><text x="180" y="178" class="col-type">DECIMAL(5,1)</text>
-    <text x="15" y="202" class="col-txt">    registration_date</text><text x="180" y="202" class="col-type">DATE</text>
+    <text x="15" y="58" class="col-pk">PK  user_id</text><text x="195" y="58" class="col-type">INT (AI)</text>
+    <text x="15" y="82" class="col-txt">    full_name</text><text x="195" y="82" class="col-type">VARCHAR(100)</text>
+    <text x="15" y="106" class="col-pk">UK  email</text><text x="195" y="106" class="col-type">VARCHAR(120)</text>
+    <text x="15" y="130" class="col-txt">    date_of_birth</text><text x="195" y="130" class="col-type">DATE</text>
+    <text x="15" y="154" class="col-txt">    gender</text><text x="195" y="154" class="col-type">ENUM</text>
+    <text x="15" y="178" class="col-txt">    height_cm</text><text x="195" y="178" class="col-type">DECIMAL(5,1)</text>
+    <text x="15" y="202" class="col-txt">    registration_date</text><text x="195" y="202" class="col-type">DATE</text>
   </g>
 
-  <!-- TABLE: fitness_goals (Top-Left) -->
-  <g transform="translate(60, 110)">
-    <rect width="260" height="230" class="box" />
-    <path d="M 0 0 L 260 0 L 260 35 L 0 35 Z" class="box-header" />
-    <text x="15" y="24" class="tbl-title">fitness_goals</text>
-    <text x="15" y="58" class="col-pk">PK  goal_id</text><text x="190" y="58" class="col-type">INT (AI)</text>
-    <text x="15" y="82" class="col-fk">FK  user_id</text><text x="190" y="82" class="col-type">INT</text>
-    <text x="15" y="106" class="col-txt">    goal_type</text><text x="190" y="106" class="col-type">ENUM</text>
-    <text x="15" y="130" class="col-txt">    target_weight_kg</text><text x="190" y="130" class="col-type">DECIMAL(5,2)</text>
-    <text x="15" y="154" class="col-txt">    target_calories</text><text x="190" y="154" class="col-type">INT</text>
-    <text x="15" y="178" class="col-txt">    target_steps</text><text x="190" y="178" class="col-type">INT</text>
-    <text x="15" y="202" class="col-txt">    status</text><text x="190" y="202" class="col-type">ENUM</text>
-  </g>
-
-  <!-- TABLE: health_metrics (Top-Right) -->
-  <g transform="translate(880, 110)">
-    <rect width="260" height="245" class="box" />
-    <path d="M 0 0 L 260 0 L 260 35 L 0 35 Z" class="box-header" />
+  <!-- TABLE: health_metrics (Right Top) -->
+  <g transform="translate(890, 95)">
+    <rect width="280" height="245" class="box" />
+    <path d="M 0 0 L 280 0 L 280 35 L 0 35 Z" class="box-header" />
     <text x="15" y="24" class="tbl-title">health_metrics</text>
-    <text x="15" y="58" class="col-pk">PK  metric_id</text><text x="180" y="58" class="col-type">INT (AI)</text>
-    <text x="15" y="82" class="col-fk">FK  user_id</text><text x="180" y="82" class="col-type">INT</text>
-    <text x="15" y="106" class="col-txt">    record_datetime</text><text x="180" y="106" class="col-type">DATETIME</text>
-    <text x="15" y="130" class="col-txt">    weight_kg</text><text x="180" y="130" class="col-type">DECIMAL(5,2)</text>
-    <text x="15" y="154" class="col-txt">    heart_rate</text><text x="180" y="154" class="col-type">INT</text>
-    <text x="15" y="178" class="col-txt">    resting_heart_rate</text><text x="180" y="178" class="col-type">INT</text>
-    <text x="15" y="202" class="col-txt">    steps</text><text x="180" y="202" class="col-type">INT</text>
-    <text x="15" y="226" class="col-txt">    sleep_hours</text><text x="180" y="226" class="col-type">DECIMAL(4,2)</text>
+    <text x="15" y="58" class="col-pk">PK  metric_id</text><text x="195" y="58" class="col-type">INT (AI)</text>
+    <text x="15" y="82" class="col-fk">FK  user_id</text><text x="195" y="82" class="col-type">INT</text>
+    <text x="15" y="106" class="col-txt">    record_datetime</text><text x="195" y="106" class="col-type">DATETIME</text>
+    <text x="15" y="130" class="col-txt">    weight_kg</text><text x="195" y="130" class="col-type">DECIMAL(5,2)</text>
+    <text x="15" y="154" class="col-txt">    heart_rate</text><text x="195" y="154" class="col-type">INT</text>
+    <text x="15" y="178" class="col-txt">    resting_heart_rate</text><text x="195" y="178" class="col-type">INT</text>
+    <text x="15" y="202" class="col-txt">    steps</text><text x="195" y="202" class="col-type">INT</text>
+    <text x="15" y="226" class="col-txt">    sleep_hours</text><text x="195" y="226" class="col-type">DECIMAL(4,2)</text>
   </g>
 
-  <!-- TABLE: workout_sessions (Middle-Left) -->
-  <g transform="translate(180, 430)">
-    <rect width="260" height="230" class="box" />
-    <path d="M 0 0 L 260 0 L 260 35 L 0 35 Z" class="box-header" />
+  <!-- TABLE: workout_sessions (Left Middle) -->
+  <g transform="translate(70, 395)">
+    <rect width="280" height="230" class="box" />
+    <path d="M 0 0 L 280 0 L 280 35 L 0 35 Z" class="box-header" />
     <text x="15" y="24" class="tbl-title">workout_sessions</text>
-    <text x="15" y="58" class="col-pk">PK  workout_id</text><text x="180" y="58" class="col-type">INT (AI)</text>
-    <text x="15" y="82" class="col-fk">FK  user_id</text><text x="180" y="82" class="col-type">INT</text>
-    <text x="15" y="106" class="col-txt">    workout_date</text><text x="180" y="106" class="col-type">DATE</text>
-    <text x="15" y="130" class="col-txt">    start_time</text><text x="180" y="130" class="col-type">TIME</text>
-    <text x="15" y="154" class="col-txt">    end_time</text><text x="180" y="154" class="col-type">TIME</text>
-    <text x="15" y="178" class="col-txt">    workout_type</text><text x="180" y="178" class="col-type">VARCHAR(40)</text>
-    <text x="15" y="202" class="col-txt">    calories_burned</text><text x="180" y="202" class="col-type">INT</text>
+    <text x="15" y="58" class="col-pk">PK  workout_id</text><text x="195" y="58" class="col-type">INT (AI)</text>
+    <text x="15" y="82" class="col-fk">FK  user_id</text><text x="195" y="82" class="col-type">INT</text>
+    <text x="15" y="106" class="col-txt">    workout_date</text><text x="195" y="106" class="col-type">DATE</text>
+    <text x="15" y="130" class="col-txt">    start_time</text><text x="195" y="130" class="col-type">TIME</text>
+    <text x="15" y="154" class="col-txt">    end_time</text><text x="195" y="154" class="col-type">TIME</text>
+    <text x="15" y="178" class="col-txt">    workout_type</text><text x="195" y="178" class="col-type">VARCHAR(40)</text>
+    <text x="15" y="202" class="col-txt">    calories_burned</text><text x="195" y="202" class="col-type">INT</text>
   </g>
 
-  <!-- TABLE: workout_exercises (Middle-Center) -->
-  <g transform="translate(560, 430)">
-    <rect width="270" height="245" class="box" />
-    <path d="M 0 0 L 270 0 L 270 35 L 0 35 Z" class="box-header" />
+  <!-- TABLE: workout_exercises (Center Middle) -->
+  <g transform="translate(480, 395)">
+    <rect width="280" height="245" class="box" />
+    <path d="M 0 0 L 280 0 L 280 35 L 0 35 Z" class="box-header" />
     <text x="15" y="24" class="tbl-title">workout_exercises</text>
-    <text x="15" y="58" class="col-pk">PK  workout_exercise_id</text><text x="195" y="58" class="col-type">INT (AI)</text>
-    <text x="15" y="82" class="col-fk">FK  workout_id</text><text x="195" y="82" class="col-type">INT</text>
-    <text x="15" y="106" class="col-fk">FK  exercise_id</text><text x="195" y="106" class="col-type">INT</text>
-    <text x="15" y="130" class="col-txt">    sets</text><text x="195" y="130" class="col-type">INT</text>
-    <text x="15" y="154" class="col-txt">    repetitions</text><text x="195" y="154" class="col-type">INT</text>
-    <text x="15" y="178" class="col-txt">    weight_used_kg</text><text x="195" y="178" class="col-type">DECIMAL(6,2)</text>
-    <text x="15" y="202" class="col-txt">    duration_minutes</text><text x="195" y="202" class="col-type">INT</text>
-    <text x="15" y="226" class="col-txt">    calories_burned</text><text x="195" y="226" class="col-type">INT</text>
+    <text x="15" y="58" class="col-pk">PK  workout_exercise_id</text><text x="200" y="58" class="col-type">INT (AI)</text>
+    <text x="15" y="82" class="col-fk">FK  workout_id</text><text x="200" y="82" class="col-type">INT</text>
+    <text x="15" y="106" class="col-fk">FK  exercise_id</text><text x="200" y="106" class="col-type">INT</text>
+    <text x="15" y="130" class="col-txt">    sets</text><text x="200" y="130" class="col-type">INT</text>
+    <text x="15" y="154" class="col-txt">    repetitions</text><text x="200" y="154" class="col-type">INT</text>
+    <text x="15" y="178" class="col-txt">    weight_used_kg</text><text x="200" y="178" class="col-type">DECIMAL(6,2)</text>
+    <text x="15" y="202" class="col-txt">    duration_minutes</text><text x="200" y="202" class="col-type">INT</text>
+    <text x="15" y="226" class="col-txt">    calories_burned</text><text x="200" y="226" class="col-type">INT</text>
   </g>
 
-  <!-- TABLE: exercises (Bottom-Center) -->
-  <g transform="translate(560, 730)">
-    <rect width="270" height="170" class="box" />
-    <path d="M 0 0 L 270 0 L 270 35 L 0 35 Z" class="box-header" />
+  <!-- TABLE: exercises (Center Bottom) -->
+  <g transform="translate(480, 700)">
+    <rect width="280" height="170" class="box" />
+    <path d="M 0 0 L 280 0 L 280 35 L 0 35 Z" class="box-header" />
     <text x="15" y="24" class="tbl-title">exercises</text>
-    <text x="15" y="58" class="col-pk">PK  exercise_id</text><text x="195" y="58" class="col-type">INT (AI)</text>
-    <text x="15" y="82" class="col-pk">UK  exercise_name</text><text x="195" y="82" class="col-type">VARCHAR(80)</text>
-    <text x="15" y="106" class="col-txt">    category</text><text x="195" y="106" class="col-type">ENUM</text>
-    <text x="15" y="130" class="col-txt">    muscle_group</text><text x="195" y="130" class="col-type">VARCHAR(40)</text>
-    <text x="15" y="154" class="col-txt">    description</text><text x="195" y="154" class="col-type">VARCHAR(255)</text>
+    <text x="15" y="58" class="col-pk">PK  exercise_id</text><text x="200" y="58" class="col-type">INT (AI)</text>
+    <text x="15" y="82" class="col-pk">UK  exercise_name</text><text x="200" y="82" class="col-type">VARCHAR(80)</text>
+    <text x="15" y="106" class="col-txt">    category</text><text x="200" y="106" class="col-type">ENUM</text>
+    <text x="15" y="130" class="col-txt">    muscle_group</text><text x="200" y="130" class="col-type">VARCHAR(40)</text>
+    <text x="15" y="154" class="col-txt">    description</text><text x="200" y="154" class="col-type">VARCHAR(255)</text>
   </g>
 
-  <!-- TABLE: nutrition_logs (Middle-Right) -->
-  <g transform="translate(980, 430)">
-    <rect width="260" height="230" class="box" />
-    <path d="M 0 0 L 260 0 L 260 35 L 0 35 Z" class="box-header" />
+  <!-- TABLE: nutrition_logs (Right Middle) -->
+  <g transform="translate(890, 395)">
+    <rect width="280" height="230" class="box" />
+    <path d="M 0 0 L 280 0 L 280 35 L 0 35 Z" class="box-header" />
     <text x="15" y="24" class="tbl-title">nutrition_logs</text>
-    <text x="15" y="58" class="col-pk">PK  nutrition_log_id</text><text x="190" y="58" class="col-type">INT (AI)</text>
-    <text x="15" y="82" class="col-fk">FK  user_id</text><text x="190" y="82" class="col-type">INT</text>
-    <text x="15" y="106" class="col-fk">FK  food_id</text><text x="190" y="106" class="col-type">INT</text>
-    <text x="15" y="130" class="col-txt">    log_date</text><text x="190" y="130" class="col-type">DATE</text>
-    <text x="15" y="154" class="col-txt">    meal_type</text><text x="190" y="154" class="col-type">ENUM</text>
-    <text x="15" y="178" class="col-txt">    quantity</text><text x="190" y="178" class="col-type">DECIMAL(5,2)</text>
-    <text x="15" y="202" class="col-txt">    total_calories</text><text x="190" y="202" class="col-type">DECIMAL(8,2)</text>
+    <text x="15" y="58" class="col-pk">PK  nutrition_log_id</text><text x="200" y="58" class="col-type">INT (AI)</text>
+    <text x="15" y="82" class="col-fk">FK  user_id</text><text x="200" y="82" class="col-type">INT</text>
+    <text x="15" y="106" class="col-fk">FK  food_id</text><text x="200" y="106" class="col-type">INT</text>
+    <text x="15" y="130" class="col-txt">    log_date</text><text x="200" y="130" class="col-type">DATE</text>
+    <text x="15" y="154" class="col-txt">    meal_type</text><text x="200" y="154" class="col-type">ENUM</text>
+    <text x="15" y="178" class="col-txt">    quantity</text><text x="200" y="178" class="col-type">DECIMAL(5,2)</text>
+    <text x="15" y="202" class="col-txt">    total_calories</text><text x="200" y="202" class="col-type">DECIMAL(8,2)</text>
   </g>
 
-  <!-- TABLE: foods (Bottom-Right) -->
-  <g transform="translate(980, 710)">
-    <rect width="260" height="210" class="box" />
-    <path d="M 0 0 L 260 0 L 260 35 L 0 35 Z" class="box-header" />
+  <!-- TABLE: foods (Right Bottom) -->
+  <g transform="translate(890, 680)">
+    <rect width="280" height="210" class="box" />
+    <path d="M 0 0 L 280 0 L 280 35 L 0 35 Z" class="box-header" />
     <text x="15" y="24" class="tbl-title">foods</text>
-    <text x="15" y="58" class="col-pk">PK  food_id</text><text x="190" y="58" class="col-type">INT (AI)</text>
-    <text x="15" y="82" class="col-pk">UK  food_name</text><text x="190" y="82" class="col-type">VARCHAR(80)</text>
-    <text x="15" y="106" class="col-txt">    category</text><text x="190" y="106" class="col-type">VARCHAR(40)</text>
-    <text x="15" y="130" class="col-txt">    serving_size</text><text x="190" y="130" class="col-type">VARCHAR(40)</text>
-    <text x="15" y="154" class="col-txt">    calories</text><text x="190" y="154" class="col-type">DECIMAL(7,2)</text>
-    <text x="15" y="178" class="col-txt">    protein_g</text><text x="190" y="178" class="col-type">DECIMAL(6,2)</text>
-    <text x="15" y="202" class="col-txt">    carbs_g / fat_g</text><text x="190" y="202" class="col-type">DECIMAL(6,2)</text>
+    <text x="15" y="58" class="col-pk">PK  food_id</text><text x="200" y="58" class="col-type">INT (AI)</text>
+    <text x="15" y="82" class="col-pk">UK  food_name</text><text x="200" y="82" class="col-type">VARCHAR(80)</text>
+    <text x="15" y="106" class="col-txt">    category</text><text x="200" y="106" class="col-type">VARCHAR(40)</text>
+    <text x="15" y="130" class="col-txt">    serving_size</text><text x="200" y="130" class="col-type">VARCHAR(40)</text>
+    <text x="15" y="154" class="col-txt">    calories</text><text x="200" y="154" class="col-type">DECIMAL(7,2)</text>
+    <text x="15" y="178" class="col-txt">    protein_g</text><text x="200" y="178" class="col-type">DECIMAL(6,2)</text>
+    <text x="15" y="202" class="col-txt">    carbs_g / fat_g</text><text x="200" y="202" class="col-type">DECIMAL(6,2)</text>
   </g>
 
   <!-- RELATIONSHIP CONNECTORS (CROW'S FOOT) -->
-  <!-- users -> fitness_goals -->
-  <path d="M 480 220 L 320 220" class="conn-line" marker-start="url(#one)" marker-end="url(#crow)" />
-  <text x="400" y="210" class="rel-label">1 : N</text>
-
   <!-- users -> health_metrics -->
-  <path d="M 730 220 L 880 220" class="conn-line" marker-start="url(#one)" marker-end="url(#crow)" />
-  <text x="805" y="210" class="rel-label">1 : N</text>
+  <path d="M 760 210 L 890 210" class="conn-line" marker-start="url(#one)" marker-end="url(#crow)" />
+  <text x="825" y="200" class="rel-label">1 : N</text>
 
   <!-- users -> workout_sessions -->
-  <path d="M 520 340 L 520 380 L 310 380 L 310 430" class="conn-line" marker-start="url(#one)" marker-end="url(#crow)" />
-  <text x="390" y="375" class="rel-label">1 : N</text>
+  <path d="M 480 210 L 210 210 L 210 395" class="conn-line" marker-start="url(#one)" marker-end="url(#crow)" />
+  <text x="240" y="290" class="rel-label">1 : N</text>
 
   <!-- users -> nutrition_logs -->
-  <path d="M 680 340 L 680 380 L 1110 380 L 1110 430" class="conn-line" marker-start="url(#one)" marker-end="url(#crow)" />
-  <text x="890" y="375" class="rel-label">1 : N</text>
+  <path d="M 620 325 L 620 360 L 1030 360 L 1030 395" class="conn-line" marker-start="url(#one)" marker-end="url(#crow)" />
+  <text x="830" y="352" class="rel-label">1 : N</text>
 
   <!-- workout_sessions -> workout_exercises -->
-  <path d="M 440 550 L 560 550" class="conn-line" marker-start="url(#one)" marker-end="url(#crow)" />
-  <text x="500" y="540" class="rel-label">1 : N</text>
+  <path d="M 350 515 L 480 515" class="conn-line" marker-start="url(#one)" marker-end="url(#crow)" />
+  <text x="415" y="505" class="rel-label">1 : N</text>
 
   <!-- exercises -> workout_exercises -->
-  <path d="M 695 730 L 695 675" class="conn-line" marker-start="url(#one)" marker-end="url(#crow)" />
-  <text x="725" y="705" class="rel-label">1 : N</text>
+  <path d="M 620 700 L 620 640" class="conn-line" marker-start="url(#one)" marker-end="url(#crow)" />
+  <text x="650" y="670" class="rel-label">1 : N</text>
 
   <!-- foods -> nutrition_logs -->
-  <path d="M 1110 710 L 1110 660" class="conn-line" marker-start="url(#one)" marker-end="url(#crow)" />
-  <text x="1135" y="690" class="rel-label">1 : N</text>
+  <path d="M 1030 680 L 1030 625" class="conn-line" marker-start="url(#one)" marker-end="url(#crow)" />
+  <text x="1060" y="655" class="rel-label">1 : N</text>
 
 </svg>

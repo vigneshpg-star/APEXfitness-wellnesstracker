@@ -1,8 +1,8 @@
 # APEX Fitness & Wellness Tracking System - Entity Relationship Diagram
 
 ## 1. Overview
-The APEX database schema is engineered in **Third Normal Form (3NF)** with strict relational integrity, referential constraints, and domain validation. The database models four core fitness tracking subsystems:
-1. **User Profile & Objectives**: `users`, `fitness_goals`
+The APEX database schema is engineered in **Third Normal Form (3NF)** with strict relational integrity, referential constraints, and domain validation. The database models three core fitness tracking operational subsystems across 7 relational entities:
+1. **User Profile Baseline**: `users`
 2. **Activity & Exercise Tracking**: `exercises`, `workout_sessions`, `workout_exercises`
 3. **Dietary & Nutrition Tracking**: `foods`, `nutrition_logs`
 4. **Biometric & Health Monitoring**: `health_metrics`
@@ -13,7 +13,6 @@ The APEX database schema is engineered in **Third Normal Form (3NF)** with stric
 
 ```mermaid
 erDiagram
-    users ||--o{ fitness_goals : "sets (1:N)"
     users ||--o{ workout_sessions : "logs (1:N)"
     users ||--o{ nutrition_logs : "records (1:N)"
     users ||--o{ health_metrics : "tracks (1:N)"
@@ -29,25 +28,6 @@ erDiagram
         enum gender "Male | Female | Other"
         decimal height_cm "CHECK (0 < height_cm < 280)"
         date registration_date "DEFAULT CURRENT_DATE"
-    }
-
-    fitness_goals {
-        int goal_id PK "Auto Increment"
-        int user_id FK "REFERENCES users(user_id) ON DELETE CASCADE"
-        enum goal_type "Weight Loss | Weight Gain | Muscle Building | General Fitness | Endurance"
-        decimal target_weight_kg "CHECK > 0"
-        int target_calories "CHECK > 0"
-        int target_steps "CHECK >= 0"
-        date target_date "Target completion deadline"
-        enum status "Active | Achieved | Abandoned"
-    }
-
-    exercises {
-        int exercise_id PK "Auto Increment"
-        string exercise_name UK "NOT NULL, UNIQUE"
-        enum category "Strength | Cardio | Flexibility | HIIT"
-        string muscle_group "NOT NULL"
-        string description "Exercise instructions"
     }
 
     workout_sessions {
@@ -70,6 +50,14 @@ erDiagram
         decimal weight_used_kg "CHECK >= 0"
         int duration_minutes "CHECK >= 0"
         int calories_burned "Estimated / logged burn"
+    }
+
+    exercises {
+        int exercise_id PK "Auto Increment"
+        string exercise_name UK "NOT NULL, UNIQUE"
+        enum category "Strength | Cardio | Flexibility | HIIT"
+        string muscle_group "NOT NULL"
+        string description "Exercise instructions"
     }
 
     foods {
@@ -113,7 +101,6 @@ erDiagram
 
 | Relationship | Cardinality | Parent Entity | Child Entity | On Delete Action | Business Rule & Justification |
 | :--- | :---: | :--- | :--- | :---: | :--- |
-| **User Profile to Goals** | `1 : 0..*` | `users` | `fitness_goals` | `CASCADE` | A user can register multiple progressive goals; deleting a user account purges their associated targets. |
 | **User to Workout Sessions** | `1 : 0..*` | `users` | `workout_sessions` | `CASCADE` | A user logs zero or many sessions over time; all session logs belong to exactly one user. |
 | **Workout Session to Exercises** | `1 : 1..*` | `workout_sessions` | `workout_exercises` | `CASCADE` | Each workout session contains one or more exercise sets/drills. |
 | **Master Exercise to Workout Exercise** | `1 : 0..*` | `exercises` | `workout_exercises` | `RESTRICT` | Master catalog of exercises. Deleting an exercise is restricted if historical workouts reference it, preventing orphan drill references. |
