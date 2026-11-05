@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1020" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg { fill: #0B0B0E; }
+      .card { fill: #15151A; stroke: #26262E; stroke-width: 1.5; rx: 10; }
+      .card-hdr { fill: #1C1C22; rx: 8; }
+      .subcard { fill: #111116; stroke: #22222A; stroke-width: 1; rx: 6; }
+      .deliv-card { fill: #181820; stroke: #2B2B38; stroke-width: 1; rx: 6; }
+      .title { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 28px; font-weight: bold; fill: #FFFFFF; }
+      .subtitle { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 15px; fill: #A1A1AA; }
+      .section-label { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 13px; font-weight: bold; fill: #71717A; letter-spacing: 0.5px; }
+      .step-tag { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 13px; font-weight: bold; }
+      .phase-title { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 16px; font-weight: bold; fill: #FFFFFF; }
+      .meta-bold { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 13px; font-weight: bold; }
+      .meta-light { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 12px; fill: #A1A1AA; }
+      .body-txt { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 12.5px; fill: #E4E4E7; }
+      .deliv-bold { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 13px; font-weight: bold; fill: #FFFFFF; }
+      .stat-val { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 26px; font-weight: bold; fill: #FFFFFF; }
+      .stat-sub { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 12px; fill: #A1A1AA; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="1020" class="bg" />
+
+  <!-- Header Banner -->
+  <g transform="translate(50, 40)">
+    <rect width="48" height="48" rx="10" fill="#1E1E24" stroke="#2E2E38" stroke-width="1.5" />
+    <path d="M 24 12 L 36 36 L 12 36 Z" fill="#FF6A13" />
+    <text x="65" y="26" class="title">APEX FITNESS &amp; WELLNESS TRACKING SYSTEM</text>
+    <text x="65" y="46" class="subtitle">Step-by-Step Approach &amp; Effort Allocation | 4-Step Milestone-Driven Methodology</text>
+  </g>
+
+  <!-- Total Effort Pill Badge -->
+  <g transform="translate(1290, 45)">
+    <rect width="260" height="42" rx="8" fill="#201612" stroke="#FF6A13" stroke-width="1.5" />
+    <text x="130" y="26" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="bold" fill="#FF6A13" text-anchor="middle">TOTAL EFFORT: 120 HOURS</text>
+  </g>
+
+  <!-- Master Progress Allocation Bar -->
+  <text x="50" y="118" class="section-label">OVERALL EFFORT ALLOCATION BREAKDOWN</text>
+  <g transform="translate(50, 128)">
+    <!-- Phase 1: 312px (20.8%) -->
+    <rect x="0" y="0" width="310" height="44" rx="4" fill="#FF6A13" />
+    <text x="15" y="27" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="bold" fill="#0B0B0E">Phase 1: Domain &amp; 3NF (25h / 20.8%)</text>
+
+    <!-- Phase 2: 437px (29.2%) -->
+    <rect x="313" y="0" width="435" height="44" rx="4" fill="#FFB020" />
+    <text x="328" y="27" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="bold" fill="#0B0B0E">Phase 2: DB &amp; ACID Engine (35h / 29.2%)</text>
+
+    <!-- Phase 3: 437px (29.2%) -->
+    <rect x="751" y="0" width="435" height="44" rx="4" fill="#38BDF8" />
+    <text x="766" y="27" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="bold" fill="#0B0B0E">Phase 3: REST API &amp; UI (35h / 29.2%)</text>
+
+    <!-- Phase 4: 314px (20.8%) -->
+    <rect x="1189" y="0" width="311" height="44" rx="4" fill="#10B981" />
+    <text x="1204" y="27" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="bold" fill="#0B0B0E">Phase 4: Stress &amp; Docs (25h / 20.8%)</text>
+  </g>
+
+  <!-- 4 Milestone Phase Cards -->
+  <!-- CARD 1 -->
+  <g transform="translate(50, 205)">
+    <rect width="360" height="630" class="card" />
+    <path d="M 0 0 L 360 0 L 360 6 L 0 6 Z" fill="#FF6A13" />
+    <path d="M 1 6 L 359 6 L 359 72 L 1 72 Z" class="card-hdr" />
+    <text x="18" y="32" class="step-tag" fill="#FF6A13">STEP 1 · MILESTONE 1</text>
+    <text x="18" y="55" class="phase-title">Domain Modeling &amp; 3NF Design</text>
+
+    <!-- Subcard meta -->
+    <rect x="14" y="86" width="332" height="54" class="subcard" />
+    <text x="26" y="110" class="meta-bold" fill="#FF6A13">25 Hours</text>
+    <text x="96" y="110" class="meta-light">(20.8% Effort)</text>
+    <text x="26" y="128" class="meta-light">Schedule: Week 1</text>
+    <text x="215" y="128" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#FF6A13">Conceptual &amp; Logical</text>
+
+    <text x="18" y="165" class="section-label">KEY ACTIVITIES &amp; METHODOLOGY</text>
+    <text x="18" y="190" fill="#FF6A13" font-weight="bold">•</text>
+    <text x="32" y="190" class="body-txt">Decomposed 4 tracking domains into 3NF entities.</text>
+    <text x="18" y="218" fill="#FF6A13" font-weight="bold">•</text>
+    <text x="32" y="218" class="body-txt">Eliminated repeating groups &amp; dependencies.</text>
+    <text x="18" y="246" fill="#FF6A13" font-weight="bold">•</text>
+    <text x="32" y="246" class="body-txt">Engineered Crow's Foot ERD (strict cardinality).</text>
+    <text x="18" y="274" fill="#FF6A13" font-weight="bold">•</text>
+    <text x="32" y="274" class="body-txt">Authored full Data Dictionary for all columns.</text>
+    <text x="18" y="302" fill="#FF6A13" font-weight="bold">•</text>
+    <text x="32" y="302" class="body-txt">Defined domain CHECK and UNIQUE constraints.</text>
+    <text x="18" y="330" fill="#FF6A13" font-weight="bold">•</text>
+    <text x="32" y="330" class="body-txt">Structured surrogate PKs &amp; cascading FK rules.</text>
+
+    <rect x="14" y="500" width="332" height="115" class="deliv-card" />
+    <text x="24" y="525" class="meta-bold" fill="#FF6A13">VERIFIED DELIVERABLES</text>
+    <text x="24" y="552" fill="#FF6A13" font-weight="bold">✔</text><text x="42" y="552" class="deliv-bold">Crow's Foot ERD (SVG / PNG)</text>
+    <text x="24" y="578" fill="#FF6A13" font-weight="bold">✔</text><text x="42" y="578" class="deliv-bold">Relational Data Dictionary</text>
+    <text x="24" y="604" fill="#FF6A13" font-weight="bold">✔</text><text x="42" y="604" class="deliv-bold">Normalization Audit Report</text>
+  </g>
+
+  <!-- CARD 2 -->
+  <g transform="translate(430, 205)">
+    <rect width="360" height="630" class="card" />
+    <path d="M 0 0 L 360 0 L 360 6 L 0 6 Z" fill="#FFB020" />
+    <path d="M 1 6 L 359 6 L 359 72 L 1 72 Z" class="card-hdr" />
+    <text x="18" y="32" class="step-tag" fill="#FFB020">STEP 2 · MILESTONE 2</text>
+    <text x="18" y="55" class="phase-title">Database &amp; ACID Engine</text>
+
+    <rect x="14" y="86" width="332" height="54" class="subcard" />
+    <text x="26" y="110" class="meta-bold" fill="#FFB020">35 Hours</text>
+    <text x="96" y="110" class="meta-light">(29.2% Effort)</text>
+    <text x="26" y="128" class="meta-light">Schedule: Week 2</text>
+    <text x="215" y="128" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#FFB020">Physical Schema &amp; ACID</text>
+
+    <text x="18" y="165" class="section-label">KEY ACTIVITIES &amp; METHODOLOGY</text>
+    <text x="18" y="190" fill="#FFB020" font-weight="bold">•</text>
+    <text x="32" y="190" class="body-txt">Implemented MySQL 8.0 DDL on InnoDB.</text>
+    <text x="18" y="218" fill="#FFB020" font-weight="bold">•</text>
+    <text x="32" y="218" class="body-txt">Built BEFORE triggers (trg_nl_total) on meals.</text>
+    <text x="18" y="246" fill="#FFB020" font-weight="bold">•</text>
+    <text x="32" y="246" class="body-txt">Engineered AFTER triggers for workout burns.</text>
+    <text x="18" y="274" fill="#FFB020" font-weight="bold">•</text>
+    <text x="32" y="274" class="body-txt">Created 6 analytical views (BMI, HR zones).</text>
+    <text x="18" y="302" fill="#FFB020" font-weight="bold">•</text>
+    <text x="32" y="302" class="body-txt">Developed sp_log_workout with atomic rollback.</text>
+    <text x="18" y="330" fill="#FFB020" font-weight="bold">•</text>
+    <text x="32" y="330" class="body-txt">Created CURDATE()-relative seed generator.</text>
+
+    <rect x="14" y="500" width="332" height="115" class="deliv-card" />
+    <text x="24" y="525" class="meta-bold" fill="#FFB020">VERIFIED DELIVERABLES</text>
+    <text x="24" y="552" fill="#FFB020" font-weight="bold">✔</text><text x="42" y="552" class="deliv-bold">fitness_wellness_database.sql</text>
+    <text x="24" y="578" fill="#FFB020" font-weight="bold">✔</text><text x="42" y="578" class="deliv-bold">5 Automated Trigger Handlers</text>
+    <text x="24" y="604" fill="#FFB020" font-weight="bold">✔</text><text x="42" y="604" class="deliv-bold">database/acid_tests.sql Suite</text>
+  </g>
+
+  <!-- CARD 3 -->
+  <g transform="translate(810, 205)">
+    <rect width="360" height="630" class="card" />
+    <path d="M 0 0 L 360 0 L 360 6 L 0 6 Z" fill="#38BDF8" />
+    <path d="M 1 6 L 359 6 L 359 72 L 1 72 Z" class="card-hdr" />
+    <text x="18" y="32" class="step-tag" fill="#38BDF8">STEP 3 · MILESTONE 3</text>
+    <text x="18" y="55" class="phase-title">REST API &amp; Web Dashboard</text>
+
+    <rect x="14" y="86" width="332" height="54" class="subcard" />
+    <text x="26" y="110" class="meta-bold" fill="#38BDF8">35 Hours</text>
+    <text x="96" y="110" class="meta-light">(29.2% Effort)</text>
+    <text x="26" y="128" class="meta-light">Schedule: Week 3</text>
+    <text x="215" y="128" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#38BDF8">Application &amp; UI Tier</text>
+
+    <text x="18" y="165" class="section-label">KEY ACTIVITIES &amp; METHODOLOGY</text>
+    <text x="18" y="190" fill="#38BDF8" font-weight="bold">•</text>
+    <text x="32" y="190" class="body-txt">Constructed parameterized Flask API routes.</text>
+    <text x="18" y="218" fill="#38BDF8" font-weight="bold">•</text>
+    <text x="32" y="218" class="body-txt">Configured pool_pre_ping connection pool.</text>
+    <text x="18" y="246" fill="#38BDF8" font-weight="bold">•</text>
+    <text x="32" y="246" class="body-txt">Secured environment variables (.env / dotenv).</text>
+    <text x="18" y="274" fill="#38BDF8" font-weight="bold">•</text>
+    <text x="32" y="274" class="body-txt">Built 5-tab responsive SPA web frontend.</text>
+    <text x="18" y="302" fill="#38BDF8" font-weight="bold">•</text>
+    <text x="32" y="302" class="body-txt">Integrated 7 Chart.js dynamic visualizers.</text>
+    <text x="18" y="330" fill="#38BDF8" font-weight="bold">•</text>
+    <text x="32" y="330" class="body-txt">Resolved reciprocal calorie date UNION bugs.</text>
+
+    <rect x="14" y="500" width="332" height="115" class="deliv-card" />
+    <text x="24" y="525" class="meta-bold" fill="#38BDF8">VERIFIED DELIVERABLES</text>
+    <text x="24" y="552" fill="#38BDF8" font-weight="bold">✔</text><text x="42" y="552" class="deliv-bold">backend/app.py (REST API)</text>
+    <text x="24" y="578" fill="#38BDF8" font-weight="bold">✔</text><text x="42" y="578" class="deliv-bold">frontend/index.html (SPA UI)</text>
+    <text x="24" y="604" fill="#38BDF8" font-weight="bold">✔</text><text x="42" y="604" class="deliv-bold">Real-Time Burn Estimator</text>
+  </g>
+
+  <!-- CARD 4 -->
+  <g transform="translate(1190, 205)">
+    <rect width="360" height="630" class="card" />
+    <path d="M 0 0 L 360 0 L 360 6 L 0 6 Z" fill="#10B981" />
+    <path d="M 1 6 L 359 6 L 359 72 L 1 72 Z" class="card-hdr" />
+    <text x="18" y="32" class="step-tag" fill="#10B981">STEP 4 · MILESTONE 4</text>
+    <text x="18" y="55" class="phase-title">Stress Testing &amp; Reporting</text>
+
+    <rect x="14" y="86" width="332" height="54" class="subcard" />
+    <text x="26" y="110" class="meta-bold" fill="#10B981">25 Hours</text>
+    <text x="96" y="110" class="meta-light">(20.8% Effort)</text>
+    <text x="26" y="128" class="meta-light">Schedule: Week 4</text>
+    <text x="200" y="128" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="bold" fill="#10B981">Testing &amp; Formal Docs</text>
+
+    <text x="18" y="165" class="section-label">KEY ACTIVITIES &amp; METHODOLOGY</text>
+    <text x="18" y="190" fill="#10B981" font-weight="bold">•</text>
+    <text x="32" y="190" class="body-txt">Simulated 5,000 synthetic records under load.</text>
+    <text x="18" y="218" fill="#10B981" font-weight="bold">•</text>
+    <text x="32" y="218" class="body-txt">Profiled joins via EXPLAIN ANALYZE trees.</text>
+    <text x="18" y="246" fill="#10B981" font-weight="bold">•</text>
+    <text x="32" y="246" class="body-txt">Added covering indexes (24.7% faster queries).</text>
+    <text x="18" y="274" fill="#10B981" font-weight="bold">•</text>
+    <text x="32" y="274" class="body-txt">Compiled formal 17-section PDF/DOCX reports.</text>
+    <text x="18" y="302" fill="#10B981" font-weight="bold">•</text>
+    <text x="32" y="302" class="body-txt">Exported sample Excel data &amp; 8 CSV sheets.</text>
+    <text x="18" y="330" fill="#10B981" font-weight="bold">•</text>
+    <text x="32" y="330" class="body-txt">Pushed version-controlled code to GitHub.</text>
+
+    <rect x="14" y="500" width="332" height="115" class="deliv-card" />
+    <text x="24" y="525" class="meta-bold" fill="#10B981">VERIFIED DELIVERABLES</text>
+    <text x="24" y="552" fill="#10B981" font-weight="bold">✔</text><text x="42" y="552" class="deliv-bold">docs/stress_test_results.md</text>
+    <text x="24" y="578" fill="#10B981" font-weight="bold">✔</text><text x="42" y="578" class="deliv-bold">APEX_Industry_Project_Report.pdf</text>
+    <text x="24" y="604" fill="#10B981" font-weight="bold">✔</text><text x="42" y="604" class="deliv-bold">sample_data_sheet.xlsx</text>
+  </g>
+
+  <!-- Bottom KPI Summary Row -->
+  <g transform="translate(50, 860)">
+    <rect width="1500" height="115" class="card" />
+
+    <!-- Col 1 -->
+    <text x="30" y="35" class="section-label">TOTAL PROJECT EFFORT</text>
+    <text x="30" y="68" class="stat-val" fill="#FF6A13">120 Hours</text>
+    <text x="30" y="92" class="stat-sub">4 Milestone Phases</text>
+    <line x1="250" y1="20" x2="250" y2="95" stroke="#26262E" stroke-width="1.5" />
+
+    <!-- Col 2 -->
+    <text x="280" y="35" class="section-label">CORE DATA MODEL</text>
+    <text x="280" y="68" class="stat-val">7 Tables</text>
+    <text x="280" y="92" class="stat-sub">Strict 3NF Schema</text>
+    <line x1="500" y1="20" x2="500" y2="95" stroke="#26262E" stroke-width="1.5" />
+
+    <!-- Col 3 -->
+    <text x="530" y="35" class="section-label">DATABASE AUTOMATION</text>
+    <text x="530" y="68" class="stat-val">5 Triggers</text>
+    <text x="530" y="92" class="stat-sub">Zero Redundancy Drift</text>
+    <line x1="750" y1="20" x2="750" y2="95" stroke="#26262E" stroke-width="1.5" />
+
+    <!-- Col 4 -->
+    <text x="780" y="35" class="section-label">COMPUTED VIEWS</text>
+    <text x="780" y="68" class="stat-val">6 Views</text>
+    <text x="780" y="92" class="stat-sub">Derived Health Telemetry</text>
+    <line x1="1000" y1="20" x2="1000" y2="95" stroke="#26262E" stroke-width="1.5" />
+
+    <!-- Col 5 -->
+    <text x="1030" y="35" class="section-label">STRESS BENCHMARK</text>
+    <text x="1030" y="68" class="stat-val">5,300+ Logs</text>
+    <text x="1030" y="92" class="stat-sub">Sub-70ms Query Latency</text>
+    <line x1="1250" y1="20" x2="1250" y2="95" stroke="#26262E" stroke-width="1.5" />
+
+    <!-- Col 6 -->
+    <text x="1280" y="35" class="section-label">DELIVERY STATUS</text>
+    <text x="1280" y="68" class="stat-val" fill="#10B981">100% Verified</text>
+    <text x="1280" y="92" class="stat-sub">Production-Ready &amp; Git Synced</text>
+  </g>
+</svg>
